@@ -1,0 +1,17 @@
+.mb-3
+h1 ユーザー登録
+
+= form_with model: @user, local: true do |f|
+  .form-group
+    = f.label :name, 'アカウント名'
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :password, 'パスワード'
+    = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label :password_confirmation, 'パスワード（確認）'
+    = f.password_field :password_confirmation, class: 'form-control'
+  .mb-3
+  = f.submit '登録する',class: 'btn btn-warning c'
+
+  div.text-center = link_to 'ログインはこちら',new_sessions_path, class: "nav-link c"
